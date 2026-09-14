@@ -1,7 +1,7 @@
 *At*-LSPHERE genome-scale metabolic model generation pipeline
 ========================
 
-This repository contains a pipeline for generating genome-scale metabolic models of phyllosphere bacteria from the *At*-LSPHERE culture collection (Bai *et al.*, 2015), from genome sequences through gap-filling, curation, and quality-verified final models.
+This repository contains a pipeline for generating genome-scale metabolic models of phyllosphere bacteria from the *At*-LSPHERE culture collection, from genome sequences through gap-filling, curation, and quality-verified final models.
 
 ## Model generation pipeline
 
