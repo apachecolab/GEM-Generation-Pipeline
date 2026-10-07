@@ -20,7 +20,7 @@
 clear all; clc;
 
 %% Parameters
-donorDir = '/Users/ravichu/Desktop/UNIL/Projects/Pipeline/data/donors/fba'; % required: directory of external donor .mat files to sweep
+donorDir = fullfile('data','donors','fba'); % required: directory of external donor .mat files to sweep, relative to the repository root
 nWorkers = 4; % used only if Parallel Computing Toolbox is available
 growthThreshold = 5e-3; % essentiality only computed when mu_star exceeds this
 essentialThreshold = 1e-6;
@@ -31,6 +31,7 @@ if isempty(donorDir); error('Set donorDir to the external donor directory to swe
 %% Paths
 scriptDir = fileparts(mfilename('fullpath'));
 rootDir = fullfile(scriptDir,'..','..','..');
+donorDir = fullfile(rootDir,donorDir);
 dataDir = fullfile(rootDir,'data');
 coreDir = fullfile(rootDir,'scripts','gapfilling','core');
 addpath(coreDir);

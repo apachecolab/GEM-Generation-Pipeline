@@ -1,0 +1,3 @@
+scripts/gapfilling/NICEgame/** linguist-vendored
+data/** -linguist-detectable
+*.m linguist-language=MATLAB

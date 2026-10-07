@@ -30,7 +30,7 @@ scoringMethod = 'mcc'; % 'mcc' | 'auc' | 'pearson' | 'nrmse' | 'wnrmse' | 'log-n
 growthDataMode = 'binary'; % 'binary' or 'continuous'. 'continuous' requires both growth data files below; 'binary' requires only binaryGrowthDataFile.
 expMetric = 'growthRate'; % Only used when growthDataMode = 'continuous': 'growthRate' | 'maxOD' | 'endpointOD'.
 
-donorDir = '/Users/ravichu/Desktop/UNIL/Projects/Pipeline/data/donors/fba'; % '' = internal donors (this run's own gap-filled models). Otherwise a directory of external .mat donor models.
+donorDir = fullfile('data','donors','fba'); % relative to the repository root. '' = internal donors (this run's own gap-filled models). Otherwise a directory of external .mat donor models.
 donorReactionMode = 'essential'; % 'fba' | 'essential'. Only used when donorDir is set.
 
 maxK = 3; % Maximum number of new reactions to combine
@@ -41,6 +41,7 @@ patience = 2; % consecutive non-improving iterations (global) before stage 1 sto
 %% Paths
 scriptDir = fileparts(mfilename('fullpath'));
 rootDir = fullfile(scriptDir,'..','..','..');
+if ~isempty(donorDir); donorDir = fullfile(rootDir,donorDir); end
 dataDir = fullfile(rootDir,'data');
 coreDir = fullfile(rootDir,'scripts','gapfilling','core');
 addpath(coreDir);
